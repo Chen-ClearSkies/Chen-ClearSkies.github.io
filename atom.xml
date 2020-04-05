@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
     <title>Chen-ClearSkies&apos;s Blog</title>
-    <updated>2020-04-05T02:47:06.513Z</updated>
+    <updated>2020-04-05T02:49:43.985Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
     <link rel="self" href="https://chen-clearskies.github.io//atom.xml"/>
@@ -16,68 +16,5 @@
         <link href="https://chen-clearskies.github.io//post/CLion-Configuring">
         </link>
         <updated>2020-04-05T02:42:28.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/02/1YPeAJ.jpg" alt=""><br>
-声明：配置是基于<strong>CLion</strong>的<strong>2019.1</strong>版本</p>
-<hr>
-<h2 id="〇clion简介">〇.<strong>CLion</strong>简介</h2>
-<p><img src="https://s2.ax1x.com/2020/02/02/1YPmN9.png" alt=""></p>
-<hr>
-<h2 id="一安装">一.安装</h2>
-<blockquote>
-<ol>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mi>e</mi><mi>t</mi><mi>B</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">JetBrains</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span></span>官方下载地址：<a href="https://www.jetbrains.com/clion/download/#section=windows" title="CLion2019.3">CLion2019.3</a></li>
-<li>百度网盘：<a href="https://pan.baidu.com/s/1WsBneFja2k4nQfc1OSkd0w" title="CLion2019.1">CLion2019.1</a><br>
-<code>个人觉得还是2019.1版本好用</code></li>
-</ol>
-</blockquote>
-<hr>
-<h2 id="二激活方式">二.激活方式</h2>
-<p><strong>CLion</strong>是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mi>e</mi><mi>t</mi><mi>B</mi><mi>r</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">JetBrains</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span></span>公司的一个盈利性的IDE，未激活可以试用30天，然后要用就得花钱了。</p>
-<blockquote>
-<ol>
-<li><a href="https://www.jetbrains.com/clion/buy/" title="官方购买">官方购买</a> $199/年</li>
-<li>各种奇怪的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mi>D</mi><mi>E</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">IDEA</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault">A</span></span></span></span>服务器授权激活（目前尚未找到合适的服务器）</li>
-<li>激活码激活<br>
-获取激活码后在<code>帮助-&gt;Register</code>激活。</li>
-</ol>
-</blockquote>
-<hr>
-<h2 id="三汉化">三.汉化</h2>
-<blockquote>
-<p><a href="https://pan.baidu.com/s/1YPIiwtVfy6MsW1tVNQaw5Q">Clion汉化包 - 百度网盘</a><br>
-将下载后的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>s</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>c</mi><mi>e</mi><msub><mi>s</mi><mi>c</mi></msub><mi>n</mi><mi mathvariant="normal">.</mi><mi>j</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">resources_cn.jar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span><span class="mord mathdefault">e</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>文件拷贝到安装目录下的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">lib</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">b</span></span></span></span>文件夹，重启CLion就汉化好了。</p>
-</blockquote>
-<hr>
-<h2 id="四配置">四.配置</h2>
-<h3 id="1-下载mingw">1. 下载MinGW</h3>
-<blockquote>
-<p><a href="https://pan.baidu.com/s/1nohkAf1dWcb-xnNQsscflw">百度网盘</a><br>
-下载后解压至合适位置。</p>
-</blockquote>
-<h3 id="2-配置clion编译器">2. 配置<strong>CLion</strong>编译器</h3>
-<p>&lt;1&gt; 启动<strong>CLion</strong>，打开左上角的<code>文件-&gt;设置</code>。<br>
-<img src="https://s2.ax1x.com/2020/02/02/1t5KZ8.jpg" alt=""><br>
-&lt;2&gt; 在设置中打开<code>构建，执行，部署-&gt;工具链</code>。<br>
-&lt;3&gt; 点击<code>+</code>号，设置编译环境为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>i</mi><mi>n</mi><mi>G</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">MinGW</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span></span></span></span>。<br>
-&lt;4&gt; 填入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>i</mi><mi>n</mi><mi>G</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">MinGW</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span></span></span></span>的路径。然后一般来说<code>CMake</code>、<code>Make</code>、<code>C Compiler</code>和<code>C++ Compiler</code>都会自动填写。<br>
-这是我的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>i</mi><mi>n</mi><mi>G</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">MinGW</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span></span></span></span>路径：<code>C:\Program\mingw64</code><br>
-<img src="https://s2.ax1x.com/2020/02/03/1NcNvT.jpg" alt="1NcNvT.jpg"><br>
-&lt;5&gt; 出现无法检测成功的情况，这时候就需要手动填写啦。<br>
-CMake一般会自动选择。<br>
-Make填入路径：<code>C:\Program\mingw64\bin\mingw32-make.exe</code><br>
-C Compiler填入路径：<code>C:\Program\mingw64\bin\gcc.exe</code><br>
-C++ Compiler填入路径：<code>C:\Program\mingw64\bin\g++.exe</code><br>
-Debugger填入路径：<code>C:\Program\mingw64\bin\gdb.exe</code><br>
-&lt;6&gt; 然后点击确定，等待进度条加载完就好了。<br>
-成果图：<br>
-<img src="https://s2.ax1x.com/2020/02/03/1NcRKO.jpg" alt="1NcRKO.jpg"></p>
-<hr>
-<h2 id="五附记参考资料">五.附记：参考资料</h2>
-<blockquote>
-<p><a href="http://https://blog.csdn.net/u014647208/article/details/79835229" title="【Tool】Clion介绍">【Tool】Clion介绍 - CSDN博客</a><br>
-<a href="https://www.jianshu.com/p/1aa989808e15">Window10上CLion极简配置教程 - 简书</a><br>
-<a href="https://www.cnblogs.com/CXWILY/articles/9606274.html">JetBrains系列插件 - 博客园</a></p>
-</blockquote>
-]]></content>
     </entry>
 </feed>
