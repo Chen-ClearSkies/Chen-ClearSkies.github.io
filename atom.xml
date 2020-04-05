@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
     <title>晴空刹那&apos;s Blog</title>
-    <updated>2020-04-05T09:56:05.163Z</updated>
+    <updated>2020-04-05T10:34:31.502Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
     <link rel="self" href="https://chen-clearskies.github.io//atom.xml"/>
-    <subtitle>代码改变时间，编程创造未来！</subtitle>
+    <subtitle>代码改变世界，编程创造未来！</subtitle>
     <logo>https://chen-clearskies.github.io//images/avatar.png</logo>
     <icon>https://chen-clearskies.github.io//favicon.ico</icon>
     <rights>All rights reserved 2020, 晴空刹那&apos;s Blog</rights>
