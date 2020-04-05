@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
-    <title>Gridea</title>
-    <updated>2020-04-05T02:14:51.240Z</updated>
+    <title>Chen-ClearSkies&apos;s Blog</title>
+    <updated>2020-04-05T02:17:30.705Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
     <link rel="self" href="https://chen-clearskies.github.io//atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>A Programmer&apos;s Personal Blog</subtitle>
     <logo>https://chen-clearskies.github.io//images/avatar.png</logo>
     <icon>https://chen-clearskies.github.io//favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, Chen-ClearSkies&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://chen-clearskies.github.io//post/hello-gridea</id>
