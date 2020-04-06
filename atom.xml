@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
     <title>晴空刹那&apos;s Blog</title>
-    <updated>2020-04-05T14:35:24.450Z</updated>
+    <updated>2020-04-06T05:01:14.522Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
-    <link rel="self" href="https://chen-clearskies.github.io//atom.xml"/>
+    <link rel="self" href="https://chen-clearskies.github.io/atom.xml"/>
     <subtitle>代码改变世界，编程创造未来！</subtitle>
-    <logo>https://chen-clearskies.github.io//images/avatar.png</logo>
-    <icon>https://chen-clearskies.github.io//favicon.ico</icon>
+    <logo>https://chen-clearskies.github.io/images/avatar.png</logo>
+    <icon>https://chen-clearskies.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 晴空刹那&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[【洛谷P1888 三角函数】蒟蒻题解]]></title>
-        <id>https://chen-clearskies.github.io//post/luogu-p1888</id>
-        <link href="https://chen-clearskies.github.io//post/luogu-p1888">
+        <id>https://chen-clearskies.github.io/post/luogu-p1888/</id>
+        <link href="https://chen-clearskies.github.io/post/luogu-p1888/">
         </link>
         <updated>2020-04-05T12:59:18.000Z</updated>
         <summary type="html"><![CDATA[<p>用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[手把手教你如何玩转CLion]]></title>
-        <id>https://chen-clearskies.github.io//post/CLion-Configuring</id>
-        <link href="https://chen-clearskies.github.io//post/CLion-Configuring">
+        <id>https://chen-clearskies.github.io/post/CLion-Configuring/</id>
+        <link href="https://chen-clearskies.github.io/post/CLion-Configuring/">
         </link>
         <updated>2020-04-05T02:42:28.000Z</updated>
         <summary type="html"><![CDATA[<p>CLion用MinGW编译器编译C++极简小白配置。看完，我就不信你不能玩转CLion！！！</p>

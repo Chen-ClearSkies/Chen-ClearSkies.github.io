@@ -1,114 +1,175 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>【洛谷P1888 三角函数】蒟蒻题解 | 晴空刹那&#39;s Blog</title>
-<meta name="description" content="代码改变世界，编程创造未来！">
+<head>
+    <meta charset="utf-8" />
+<title>
+    晴空刹那&#39;s Blog
+</title>
+<!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<meta name="author" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<script async src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/css/style.min.css" />
+<link rel="stylesheet" href="https://chen-clearskies.github.io//styles/main.css" />
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/script.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itjoker233/Gridea-theme-Chic/assets/media/script/icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/js/Card/prism.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITJoker233/ITJoker233.github.io@1.0.12/CDN/css/Card/prism.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.js"></script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586097322424">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://chen-clearskies.github.io//styles/main.css">
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo">
+                <a href="https://chen-clearskies.github.io/">
+                    晴空刹那&#39;s Blog
+                </a>
+            </div>
 
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/">
+                        首页
+                    </a>
+                    
+                    <a class="menu-item" href="/archives">
+                        归档
+                    </a>
+                    
+                    <a class="menu-item" href="/tags">
+                        标签
+                    </a>
+                    
+                    <a class="menu-item" href="/post/about">
+                        关于
+                    </a>
+                    
+                        <input id="switch_default" type="checkbox" class="switch_default">
+                        <label for="switch_default" class="toggleBtn"></label>
+            </div>
+            <form id="gridea-search-form" data-update="1586149270041" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+            </form>
+        </div>
+    </nav>
 
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
+    
+        <nav class="navbar-mobile" id="nav-mobile">
+            <div class="container">
+                <div class="navbar-header">
+                    <div>
+                        <a href="https://chen-clearskies.github.io/">
+                            晴空刹那&#39;s Blog
+                        </a>
+                        <!--en-->
+                        <a id="mobile-toggle-theme-en" class="a en">&nbsp;Dark</a>
+                        <!--zh-->
+                        <a id="mobile-toggle-theme-zh" class="a zh">&nbsp;&#x6697;&#x9ED1;</a>
+                    </div>
+                    <form id="gridea-search-form" data-update="1586149270041" action="/search/index.html">
+                        <input class="search-input" autocomplete="off" spellcheck="false" name="q" autofocus="true" placeholder="Search...">
+                    </form>
+                    <!--en-->
+                    <div class="menu-toggle" id="menu-toggle-en" onclick="mobileBtn()">&#9776; Menu</div>
+                    <!--zh-->
+                    <div class="menu-toggle" id="menu-toggle-zh" onclick="mobileBtn()">&#9776; &#x83DC;&#x5355;</div>
 
-  
+                </div>
+                <div class="menu" id="mobile-menu">
+                    
+                        <a class="menu-item" href="/">
+                            首页
+                        </a>
+                        
+                        <a class="menu-item" href="/archives">
+                            归档
+                        </a>
+                        
+                        <a class="menu-item" href="/tags">
+                            标签
+                        </a>
+                        
+                        <a class="menu-item" href="/post/about">
+                            关于
+                        </a>
+                        
+                </div>
+            </div>
+        </nav>
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementById("menu-toggle-en");
+        var toggleMenu_zh = document.getElementById("menu-toggle-zh");
 
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.display != "none") {
+            if (toggleMenu.classList.contains("active")) {
+                toggleMenu.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        } else if (toggleMenu_zh.display != "none") {
+            if (toggleMenu_zh.classList.contains("active")) {
+                toggleMenu_zh.classList.remove("active")
+                mobileMenu.classList.remove("active")
+            } else {
+                toggleMenu_zh.classList.add("active")
+                mobileMenu.classList.add("active")
+            }
+        }
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://chen-clearskies.github.io/">
-        <img src="https://chen-clearskies.github.io//images/avatar.png?v=1586097322424" class="site-logo">
-        <h1 class="site-title">晴空刹那&#39;s Blog</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://github.com/Chen-ClearSkies" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      代码改变世界，编程创造未来！
-    </div>
-    <div class="site-footer">
-      ©2020/4/5~Now
-<br>
-Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://chen-clearskies.github.io//atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">【洛谷P1888 三角函数】蒟蒻题解</h2>
-            <div class="post-date">2020-04-05</div>
-            
-            <div class="post-content">
-              <p>用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。</p>
+    }
+</script>
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                【洛谷P1888 三角函数】蒟蒻题解
+                            </h1>
+                            
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            晴空刹那's Blog
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-04-05</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">2.1
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">509</a></span>
+                                        
+                                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://chen-clearskies.github.io/tag/QsNOi-cpa/">题解</a>
+                                
+                                <a href="https://chen-clearskies.github.io/tag/PlUXDLpjC/">C++</a>
+                                
+                            </span>
+                                            
+                                    </div>
+                                    
+                        </header>
+                        
+                        <div class="post-content">
+                            <p>用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。</p>
 <!-- more --> 
 <p>原题：<a href="https://www.luogu.com.cn/problem/P1888">传送门</a></p>
 <h2 id="本蒟蒻的题解让大神们见笑了">本蒟蒻的题解，让大神们见笑了！</h2>
@@ -159,87 +220,149 @@ int main()
 }
 </code></pre>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://chen-clearskies.github.io//tag/QsNOi-cpa" class="tag">
+                        </div>
+                        
+                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chen-clearskies.github.io/post/luogu-p1888/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://chen-clearskies.github.io/post/luogu-p1888/&sharesource=qzone&title=【洛谷P1888 三角函数】蒟蒻题解&pics=https://chen-clearskies.github.io//images/avatar.png?v=1586149270041&summary=&lt;p&gt;用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://chen-clearskies.github.io/post/luogu-p1888/&sharesource=weibo&title=【洛谷P1888 三角函数】蒟蒻题解 + " - " + &lt;p&gt;用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。&lt;/p&gt;
+&pic="https://chen-clearskies.github.io//images/avatar.png?v=1586149270041 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://chen-clearskies.github.io/tag/QsNOi-cpa/">#
                     题解
-                  </a>
-                
-                  <a href="https://chen-clearskies.github.io//tag/PlUXDLpjC" class="tag">
+                        </a>
+                        
+                        <a href="https://chen-clearskies.github.io/tag/PlUXDLpjC/">#
                     C++
-                  </a>
+                        </a>
+                        
+                            
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x4E3B;&#x9875;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://chen-clearskies.github.io/post/CLion-Configuring/">
+                                                                                                    手把手教你如何玩转CLion
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
+                </div>
                 
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://chen-clearskies.github.io//post/CLion-Configuring">
-                  <h3 class="post-title">
-                    手把手教你如何玩转CLion
-                  </h3>
-                </a>
-              </div>
-            
+                    
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
+<div id="gitalk-container" style="width: 100%;max-width: 780px;margin: auto;"></div>
 
-              
-            
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
+<script>
+    var gitalk = new Gitalk({
         clientID: '18813833407dfaa2b7ae',
         clientSecret: '27239cc18b61a70e5b664e37a7c6efd3a5e6831e',
         repo: 'chen-clearskies.github.io',
         owner: 'chen-clearskies',
         admin: ['chen-clearskies'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
+        id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+        distractionFreeMode: false // Facebook-like distraction free mode
+    })
 
-      gitalk.render('gitalk-container')
+    gitalk.render('gitalk-container')
+</script>
+                            
+                                        
+                                            
+            </div>
+    </div>
+    </div>
+    </div>
+    
+        <footer id="footer" class="footer">
+            <div class="copyright">
+                
+                        ©2020/4/5~Now
+<br>
+Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+                            
+                                    <div style="width:300px;margin:0 auto; padding:0px 0;">
+                                        <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                                            <img src="https://yanxuan.nosdn.127.net/b610ced5ac6a0e25cf6edf5606c69775.png" style="float:left;">
+                                            <p id="icpinfo" style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"></p>
+                                        </a>
+                                    </div>
+                                    
+                                        <svg viewBox="0 0 1024 1024" style="margin-left: 5px;margin-right: 5px;" version="1.0" width="8" height="8" class="my-face">
+            <path
+                d="M863.597631 513.574282l-271.33965-140.213484L729.783667 81.926656c3.583731-7.87141 7.167462-15.742819 7.167462-25.214109C736.887134 25.226908 708.345275 0.012799 672.635953 0.012799a63.611229 63.611229 0 0 0-39.293053 12.607055c-1.791866 1.59988-3.519736 3.19976-5.311602 3.19976L147.87531 418.925381a55.547834 55.547834 0 0 0-19.646527 47.356448c1.791866 17.278704 14.27093 33.021523 32.125591 42.492813l271.33965 141.749369L292.504463 945.221908c-12.479064 25.214109-1.791866 53.563983 23.166262 69.306802 10.751194 6.335525 23.230258 9.47129 35.709322 9.47129 16.062795 0 32.125591-4.735645 44.604655-15.742819l480.091993-403.297753a55.547834 55.547834 0 0 0 19.646526-47.228458 61.243407 61.243407 0 0 0-32.12559-44.156688z"
+                fill="#93b5cf"></path>
+        </svg>
+                                        晴空刹那&#39;s Blog &copy;Copyright
+                                            <script>
+                                                var date = new Date();
+                                                document.write("" + date.getFullYear());
+                                            </script>
+                                            | Powered by
+                                            <a href="" target="_blank">
+                                                
+                                            </a>
+            </div>
+            <div id="update" style="display:none;">
+                
+            </div>
+            
+                    <script>
+                        var pat = '';
+                        
+                        document.write('<div id="home_path" style="display:none;">' + document.location.protocol + '//' + window.document.location.hostname + pat + '</div>')
+                    </script>
+        </footer>
+        
+                <script>
+                    
+                    
+                    
+                    var icp = document.getElementById('icpinfo');
+                    icp.innerText = "";
+                    
+                    getStar();
+                    hljs.initHighlighting();
+                    console.clear();
+                    
+                    var newDate = new Date();
+                    newDate.setTime(1586149270041);
+                    console.log(" Blog Update Time: " + newDate.toLocaleDateString());
+                    console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
+                </script>
+                
+        </div>
+</body>
+<script>
+    scroll();
+</script>
 
-    </script>
-  
-
-  
-
-
-
-
-  </body>
 </html>
