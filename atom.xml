@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
     <title>晴空刹那&apos;s Blog</title>
-    <updated>2020-04-07T02:27:27.392Z</updated>
+    <updated>2020-04-07T02:28:59.411Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
     <link rel="self" href="https://chen-clearskies.github.io/atom.xml"/>
@@ -16,11 +16,9 @@
         <link href="https://chen-clearskies.github.io/post/r71jQNwE0/">
         </link>
         <updated>2020-04-07T02:24:56.000Z</updated>
-        <summary type="html"><![CDATA[<p><img src="https://chen-clearskies.github.io//post-images/1586226401636.png" alt="" loading="lazy"><br>
-后铺的地毯要比先铺的位置要更靠上，所以倒着循环的，从最后铺的地毯开始查找，查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，然后按照题目要求输出即可。</p>
+        <summary type="html"><![CDATA[<p>后铺的地毯要比先铺的位置要更靠上，所以倒着循环的，从最后铺的地毯开始查找，查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，然后按照题目要求输出即可。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><img src="https://chen-clearskies.github.io//post-images/1586226401636.png" alt="" loading="lazy"><br>
-后铺的地毯要比先铺的位置要更靠上，所以倒着循环的，从最后铺的地毯开始查找，查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，然后按照题目要求输出即可。</p>
+        <content type="html"><![CDATA[<p>后铺的地毯要比先铺的位置要更靠上，所以倒着循环的，从最后铺的地毯开始查找，查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，然后按照题目要求输出即可。</p>
 ]]></content>
     </entry>
     <entry>
