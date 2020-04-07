@@ -4,30 +4,43 @@
     <meta charset="utf-8" >
 
 <title>手把手教你如何玩转CLion | 晴空刹那&#39;s Blog</title>
-<meta name="description" content="代码改变世界，编程创造未来！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586216083914">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586219954398">
 <link rel="stylesheet" href="https://chen-clearskies.github.io//styles/main.css">
 
 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+
+
+
   
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
   
 
   
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
+    <meta name="description" content="CLion用MinGW编译器编译C++极简小白配置。看完，我就不信你不能玩转CLion！！！
+
+
+声明：配置是基于CLion的2019.1版本
+
+〇.CLion简介
+
+
+一.安装
+
+
+JetBrainsJetBrainsJetBrains官..." />
+    <meta name="keywords" content="C++,IDE,CLion" />
   </head>
   <body>
     <div id="app" class="main">
@@ -36,7 +49,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://chen-clearskies.github.io/">
-        <img src="https://chen-clearskies.github.io//images/avatar.png?v=1586216083914" class="site-logo">
+        <img src="https://chen-clearskies.github.io//images/avatar.png?v=1586219954398" class="site-logo">
         <h1 class="site-title">晴空刹那&#39;s Blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -94,6 +107,8 @@
       
         
       
+        
+      
     </div>
     <div class="site-description">
       代码改变世界，编程创造未来！
@@ -113,7 +128,7 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
             <h2 class="post-title">手把手教你如何玩转CLion</h2>
             <div class="post-date">2020-04-05</div>
             
-            <div class="post-content">
+            <div class="post-content" v-pre>
               <p>CLion用MinGW编译器编译C++极简小白配置。看完，我就不信你不能玩转CLion！！！</p>
 <!--more-->
 <p><img src="https://s2.ax1x.com/2020/02/02/1YPeAJ.jpg" alt="" loading="lazy"><br>
@@ -213,13 +228,10 @@ Debugger填入路径：<code>C:\Program\mingw64\bin\gdb.exe</code><br>
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
 <script type="application/javascript">
 
 AOS.init();
-
-hljs.initHighlightingOnLoad()
 
 var app = new Vue({
   el: '#app',
@@ -231,9 +243,16 @@ var app = new Vue({
 </script>
 
 
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
 
   
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
     <script>
 
       var gitalk = new Gitalk({

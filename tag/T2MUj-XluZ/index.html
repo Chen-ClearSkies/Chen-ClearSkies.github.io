@@ -4,24 +4,25 @@
     <meta charset="utf-8" >
 
 <title>IDE | 晴空刹那&#39;s Blog</title>
-<meta name="description" content="代码改变世界，编程创造未来！">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586216083914">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586219954398">
 <link rel="stylesheet" href="https://chen-clearskies.github.io//styles/main.css">
 
 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
 
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
 
+    <meta name="description" content="代码改变世界，编程创造未来！">
   </head>
   <body>
     <div id="app" class="main">
@@ -30,7 +31,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://chen-clearskies.github.io/">
-        <img src="https://chen-clearskies.github.io//images/avatar.png?v=1586216083914" class="site-logo">
+        <img src="https://chen-clearskies.github.io//images/avatar.png?v=1586219954398" class="site-logo">
         <h1 class="site-title">晴空刹那&#39;s Blog</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -88,6 +89,8 @@
       
         
       
+        
+      
     </div>
     <div class="site-description">
       代码改变世界，编程创造未来！
@@ -131,13 +134,10 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
 <script type="application/javascript">
 
 AOS.init();
-
-hljs.initHighlightingOnLoad()
 
 var app = new Vue({
   el: '#app',
@@ -147,6 +147,13 @@ var app = new Vue({
 })
 
 </script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
 
 
 
