@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>猫国建设者修改资源数（缩短游戏流程使用） | 晴空刹那&#39;s Blog</title>
+<title>【洛谷P1014 Cantor表】蒟蒻题解 | 晴空刹那&#39;s Blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -28,13 +28,17 @@
 
 
 
-    <meta name="description" content="☆☆☆警告：会严重影响游戏体验。☆☆☆
-下边是所有需要获取资源的英文名称
-☆好了，各位作死去吧☆
+    <meta name="description" content="通过观察可得以下规律：
 
-用下边的语句在控制台内输入即可，
-gamePage.resPool.get(&quot;下边物品的英文名称&quot;).value +=9..." />
-    <meta name="keywords" content="游戏" />
+
+当分子是一的时候，且分子和分母的和是偶数时，分母会加一。
+
+
+当分母是一的时候，且分子和分母的和是奇数时，分子会加一。
+
+
+除了以上情况外，分子和分母的和是偶数时，则分母减一，分子加一；分子和分母的和是奇数时，分..." />
+    <meta name="keywords" content="题解,C++" />
   </head>
   <body>
     <div id="app" class="main">
@@ -119,90 +123,81 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">猫国建设者修改资源数（缩短游戏流程使用）</h2>
+            <h2 class="post-title">【洛谷P1014 Cantor表】蒟蒻题解</h2>
             <div class="post-date">2020-04-07</div>
             
             <div class="post-content" v-pre>
-              <p>☆☆☆警告：会严重影响游戏体验。☆☆☆<br>
-下边是所有需要获取资源的英文名称<br>
-☆好了，各位作死去吧☆</p>
+              <p>通过观察可得以下规律：</p>
+<ol>
+<li>
+<p>当分子是一的时候，且分子和分母的和是偶数时，分母会加一。</p>
+</li>
+<li>
+<p>当分母是一的时候，且分子和分母的和是奇数时，分子会加一。</p>
+</li>
+<li>
+<p>除了以上情况外，分子和分母的和是偶数时，则分母减一，分子加一；分子和分母的和是奇数时，分母加一，分子减一。</p>
+</li>
+</ol>
+<!-- more -->
+<p>原题：<a href="https://www.luogu.com.cn/problem/P1014">传送门</a></p>
+<figure data-type="image" tabindex="1"><img src="https://chen-clearskies.github.io//post-images/1586227332156.png" alt="" loading="lazy"></figure>
 <hr>
-<p>用下边的语句在控制台内输入即可，<br>
-gamePage.resPool.get(&quot;下边物品的英文名称&quot;).value +=9999999<br>
-建议只调整第四部分数据，以及如类似空角兽这样极其难以获取的资源数据</p>
-<hr>
-<p>猫薄荷catnip<br>
-木材wood<br>
-矿物minerals<br>
-煤炭coal<br>
-铁锭iron<br>
-钛锭titanium<br>
-黄金gold<br>
-石油oil<br>
-铀uranium<br>
-难得素unobtainium</p>
-<hr>
-<p>喵力manpower<br>
-科研点science<br>
-文化点culture<br>
-信仰faith<br>
-喵星人kittens<br>
-斑马zebras<br>
-星图starchart<br>
-火箭rocket<br>
-时间通量 temporalFlux<br>
-浮点运算能力 gflops<br>
-哈希 hashrates</p>
-<hr>
-<p>皮革furs<br>
-象牙ivory<br>
-香料spice<br>
-独角兽unicorns<br>
-空角兽alicorn<br>
-眼泪tears<br>
-业力（貌似无法调整）karma<br>
-领导力paragon<br>
-燃烧领导力 bunedParagon<br>
-时光水晶timeCrystal<br>
-悲伤sorrow<br>
-礼盒 elderBox<br>
-包装纸 wrappingPaper<br>
-黑币 blackcoin</p>
-<hr>
-<p>横梁beam<br>
-石板slab<br>
-混凝土concrate<br>
-金属板plate<br>
-钢铁steel<br>
-合金alloy<br>
-齿轮gear<br>
-脚手架scaffold<br>
-船ship<br>
-油轮 tanker<br>
-煤油 kerosene<br>
-手稿 manuspan<br>
-羊皮纸parchment<br>
-摘要compedium<br>
-蓝图blueprint<br>
-钍 thorium<br>
-巨石megalith</p>
-<hr>
-<p>死灵兽 necrocorn<br>
-E合金 eludium<br>
-虚空 void<br>
-圣遗物 relic<br>
-反物质 antimatter</p>
+<h2 id="本蒟蒻的题解让大神们见笑了">本蒟蒻的题解，让大神们见笑了！</h2>
+<h2 id="首先进行找规律">首先，进行找规律。</h2>
+<h3 id="大家可以发现">大家可以发现：</h3>
+<ul>
+<li>1、当分子是一的时候，且分子和分母的和是偶数时，分母会加一。</li>
+<li>2、当分母是一的时候，且分子和分母的和是奇数时，分子会加一。</li>
+<li>3、除了以上情况外，分子和分母的和是偶数时，则分母减一，分子加一；分子和分母的和是奇数时，分母加一，分子减一。</li>
+</ul>
+<h2 id="ok规律找完了接下来就是代码上的实现了">OK，规律找完了，接下来就是代码上的实现了。</h2>
+<h3 id="咳咳上代码">咳咳，上代码：</h3>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int n,p=1,q=1;
+int main()
+{
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;n;i++)
+	{
+		if((p+q)%2==0&amp;&amp;p==1)
+        	q++;
+		else if((p+q)%2==1&amp;&amp;q==1)
+        	p++;
+		else if((p+q)%2==0)
+        	p--,q++;
+		else if((p+q)%2==1)
+        	p++,q--;
+	}
+	cout&lt;&lt;p&lt;&lt;&quot;/&quot;&lt;&lt;q;
+	return 0;
+}
+</code></pre>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://chen-clearskies.github.io/tag/you-xi/" class="tag">
-                    游戏
+                  <a href="https://chen-clearskies.github.io/tag/QsNOi-cpa/" class="tag">
+                    题解
+                  </a>
+                
+                  <a href="https://chen-clearskies.github.io/tag/PlUXDLpjC/" class="tag">
+                    C++
                   </a>
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://chen-clearskies.github.io/post/luogu-p1003/">
+                  <h3 class="post-title">
+                    【洛谷P1003 铺地毯】蒟蒻题解
+                  </h3>
+                </a>
+              </div>
             
 
             
