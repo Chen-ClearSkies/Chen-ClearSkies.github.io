@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | 晴空刹那&#39;s Blog</title>
+<title>猫国建设者连点器 | 晴空刹那&#39;s Blog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -28,13 +28,18 @@
 
 
 
-    <meta name="description" content="我，一个初二的学生，一条有梦想的咸鱼，就读于华南师范大学中山附属中学。写程序能力极菜，但是却摸得一手好鱼。崇尚“代码改变世界，编程创造未来。”
+    <meta name="description" content="猫国建设者
+
+免责声明
+
+本代码转自并改编于网络，仅供个人使用，不可用于商业用途。
+因使用本代码的所有后果由使用者承担
+如果你同意以上条款，那就开始愉快地享(zhuò)用(bì)吧！
 
 
-GitHub：Chen-ClearSkies
-洛谷：晴空刹那
-QQ：2360161902@q..." />
-    <meta name="keywords" content="" />
+单击版
+#include&lt;cstdio&gt;..." />
+    <meta name="keywords" content="游戏" />
   </head>
   <body>
     <div id="app" class="main">
@@ -119,25 +124,76 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+            <h2 class="post-title">猫国建设者连点器</h2>
+            <div class="post-date">2020-04-08</div>
             
             <div class="post-content" v-pre>
-              <p>我，一个初二的学生，一条有梦想的咸鱼，就读于华南师范大学中山附属中学。写程序能力极菜，但是却摸得一手好鱼。崇尚“代码改变世界，编程创造未来。”</p>
+              <h1 id="猫国建设者"><a href="https://likexia.gitee.io/cat-zh/">猫国建设者</a></h1>
 <hr>
-<blockquote>
-<p>GitHub：<a href="https://github.com/Chen-ClearSkies">Chen-ClearSkies</a><br>
-洛谷：<a href="https://www.luogu.com.cn/user/73226">晴空刹那</a><br>
-QQ：2360161902@qq.com<br>
-邮箱：2360161902@qq.com<br>
-GitHub Blog：<a href="https://chen-clearskies.github.io/">晴空刹那's Blog</a><br>
-洛谷 Blog:<a href="https://www.luogu.com.cn/blog/clear-skies/">Clear_Skies's Blog</a><br>
-博客园 Blog：<a href="https://www.cnblogs.com/clear-skies/">晴空刹那的博客</a></p>
-</blockquote>
+<h2 id="免责声明">免责声明</h2>
+<ol>
+<li>本代码转自并改编于网络，仅供个人使用，不可用于商业用途。</li>
+<li>因使用本代码的所有后果由使用者承担</li>
+<li>如果你同意以上条款，那就开始愉快地享(zhuò)用(bì)吧！</li>
+</ol>
 <hr>
-<p>这个基于GitHub Pages而搭建的博客小站自从2020年4月5日搭建完成，已经有<img src="https://www.hit-counts.com/counter.php?t=MTQ0NzMzMg==" alt="" loading="lazy">位DaLao访问过蒟蒻我的博客。</p>
+<h2 id="单击版">单击版</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;   
+#include&lt;windows.h&gt;    
+#define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) &amp; 0x8000) ? 1:0)   
+int main()
+{ 
+    int now=0,k=0;   
+    printf(&quot;长按1将鼠标放在“采集猫薄荷”上\n&quot;);  
+    while(1){    
+        if(KEY_DOWN('1')){   
+            mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);
+            Sleep(0.000001);
+            mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);  
+        }  
+        Sleep(0.000001);    
+    }    
+    return 0;  
+}
+</code></pre>
+<hr>
+<h2 id="长按版">长按版</h2>
+<pre><code class="language-cpp">#include&lt;cstdio&gt;  
+#include&lt;windows.h&gt;    
+#define KEY_DOWN(VK_NONAME) ((GetAsyncKeyState(VK_NONAME) &amp; 0x8000) ? 1:0)   
+int main()
+{ 
+    int now=0,k=0;    
+    printf(&quot;将鼠标放在“采集猫薄荷”上，按1点击左键，按2停止\n&quot;);  
+    while(1){    
+        if(KEY_DOWN('1')){   
+            now=1;     
+            Sleep(100);   
+        }
+        if(KEY_DOWN('2')){    
+            now=0;    
+            Sleep(100);
+        }
+        if(now==1){   
+            mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);
+            Sleep(1);
+            mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0);  
+        }  
+        Sleep(1);    
+    }    
+    return 0;  
+}
+</code></pre>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://chen-clearskies.github.io/tag/you-xi/" class="tag">
+                    游戏
+                  </a>
+                
+              </div>
             
             
 
