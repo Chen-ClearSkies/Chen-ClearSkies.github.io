@@ -1,144 +1,154 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
-
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>晴空刹那&#39;s Blog</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
-<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586334694963">
+<link rel="shortcut icon" href="https://chen-clearskies.github.io//favicon.ico?v=1586493738245">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://chen-clearskies.github.io//styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
 
 
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
 
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
-
-    <meta name="description" content="代码改变世界，编程创造未来！">
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://chen-clearskies.github.io/">
-        <img src="https://chen-clearskies.github.io//images/avatar.png?v=1586334694963" class="site-logo">
-        <h1 class="site-title">晴空刹那&#39;s Blog</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            晴空刹那&#39;s Blog
+        </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="https://chen-clearskies.github.io/post/game" class="site-nav">
-            游戏
-          </a>
-        
-      
-        
-          <a href="https://chen-clearskies.github.io/post/friends" class="site-nav">
-            友链
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-          <a class="social-link" href="https://chen-clearskies.github.io/" target="_blank">
-            <i class="fab fa-github"></i>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      代码改变世界，编程创造未来！
-    </div>
-    <div class="site-footer">
-      ©2020/4/5~Now
-<br>
-Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://chen-clearskies.github.io//atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://chen-clearskies.github.io/post/CLion-Configuring/">
-                  <h2 class="post-title">【置顶】手把手教你如何玩转CLion</h2>
-                </a>
-                <div class="post-date">
-                  2020-04-05
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
                 </div>
-                <div class="post-abstract">
-                  <p>CLion用MinGW编译器编译C++极简小白配置。看完，我就不信你不能玩转CLion！！！</p>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://chen-clearskies.github.io/post/game" class="menu gt-a-link">
+                            游戏
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://chen-clearskies.github.io/post/friends" class="menu gt-a-link">
+                            友链
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
 
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                            <span class="sticky-top-flag gt-bg-accent-color-first">置顶</span>
+                        
+                        <a href="https://chen-clearskies.github.io/post/CLion-Configuring/">
+                            <span class="post-title gt-c-content-color-first">【置顶】手把手教你如何玩转CLion</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>CLion用MinGW编译器编译C++极简小白配置。看完，我就不信你不能玩转CLion！！！</p>
+
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-04-05 ·
+                        </time>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/PlUXDLpjC/" class="post-tag">
+                                # C++
+                            </a>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/T2MUj-XluZ/" class="post-tag">
+                                # IDE
+                            </a>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/xKJ8urnJR/" class="post-tag">
+                                # CLion
+                            </a>
+                        
+                    </div>
                 </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://chen-clearskies.github.io/post/luogu-p1014/">
-                  <h2 class="post-title">【洛谷P1014 Cantor表】蒟蒻题解</h2>
-                </a>
-                <div class="post-date">
-                  2020-04-07
-                </div>
-                <div class="post-abstract">
-                  <p>通过观察可得以下规律：</p>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://chen-clearskies.github.io/post/luogu-p1014/">
+                            <span class="post-title gt-c-content-color-first">【洛谷P1014 Cantor表】蒟蒻题解</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>通过观察可得以下规律：</p>
 <ol>
 <li>
 <p>当分子是一的时候，且分子和分母的和是偶数时，分母会加一。</p>
@@ -151,76 +161,119 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
 </li>
 </ol>
 
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-04-07 ·
+                        </time>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/QsNOi-cpa/" class="post-tag">
+                                # 题解
+                            </a>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/PlUXDLpjC/" class="post-tag">
+                                # C++
+                            </a>
+                        
+                    </div>
                 </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://chen-clearskies.github.io/post/luogu-p1003/">
-                  <h2 class="post-title">【洛谷P1003 铺地毯】蒟蒻题解</h2>
-                </a>
-                <div class="post-date">
-                  2020-04-07
-                </div>
-                <div class="post-abstract">
-                  <p>后铺的地毯要比先铺的位置要更靠上，所以倒着循环的，从最后铺的地毯开始查找，查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，然后按照题目要求输出即可。</p>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://chen-clearskies.github.io/post/luogu-p1003/">
+                            <span class="post-title gt-c-content-color-first">【洛谷P1003 铺地毯】蒟蒻题解</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>后铺的地毯要比先铺的位置要更靠上，所以倒着循环的，从最后铺的地毯开始查找，查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，然后按照题目要求输出即可。</p>
 
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-04-07 ·
+                        </time>
+                        
+                    </div>
                 </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://chen-clearskies.github.io/post/luogu-p1888/">
-                  <h2 class="post-title">【洛谷P1888 三角函数】蒟蒻题解</h2>
-                </a>
-                <div class="post-date">
-                  2020-04-05
-                </div>
-                <div class="post-abstract">
-                  <p>用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。</p>
+                
+            </div>
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://chen-clearskies.github.io/post/luogu-p1888/">
+                            <span class="post-title gt-c-content-color-first">【洛谷P1888 三角函数】蒟蒻题解</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        <p>用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。</p>
 
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2020-04-05 ·
+                        </time>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/QsNOi-cpa/" class="post-tag">
+                                # 题解
+                            </a>
+                        
+                            <a href="https://chen-clearskies.github.io/tag/PlUXDLpjC/" class="post-tag">
+                                # C++
+                            </a>
+                        
+                    </div>
                 </div>
-              </div>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-  
+                
+            </div>
+        
+    </div>
 </div>
 
-        </div>
-      </div>
+        <div class="pagination-container">
+    
+    
+</div>
+
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">代码改变世界，编程创造未来！</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     </div>
+    <div class="footer-info">
+        ©2020/4/5~Now
+<br>
+Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://chen-clearskies.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
-<script type="application/javascript">
-
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+<script>
+    hljs.initHighlightingOnLoad()
 </script>
 
-
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
-
-
-
-
-
-  </body>
+    </div>
+</div>
+</body>
 </html>
