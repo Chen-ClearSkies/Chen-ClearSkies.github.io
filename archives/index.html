@@ -8,9 +8,9 @@
 <meta name="description" content="代码改变世界，编程创造未来！">
 <meta name="theme-color" content="#000">
 <title>晴空刹那&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1586493893899">
+<link rel="shortcut icon" href="/favicon.ico?v=1590290719337">
 <link rel="stylesheet" href="/styles/main.css">
-<link rel="stylesheet" href="/media/css/gemini.css">
+<link rel="stylesheet" href="/media/css/pisces.css">
 
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -33,7 +33,7 @@
     <div class="head-top-line"></div>
     <div class="header-box">
       
-<div class=" gemini">
+<div class=" pisces">
   <header class="header  ">
     <div class="blog-header box-shadow-wrapper bg-color " id="header">
       <div class="nav-toggle" id="nav_toggle">
@@ -52,15 +52,13 @@
           
         </div>
         
-          <p class="subtitle">精于心，简于形</p>
+          <p class="subtitle">代码改变世界，编程创造未来！</p>
         
       </div>
       <nav class="site-nav" id="site_nav">
         <ul id="nav_ul">
           
             
-            
-              
             
             <li class="nav-item ">
               
@@ -73,8 +71,6 @@
           
             
             
-              
-            
             <li class="nav-item nav-item-active">
               
               
@@ -85,8 +81,6 @@
             </li>
           
             
-            
-              
             
             <li class="nav-item ">
               
@@ -99,8 +93,6 @@
           
             
             
-              
-            
             <li class="nav-item ">
               
               
@@ -111,8 +103,6 @@
             </li>
           
             
-            
-              
             
             <li class="nav-item ">
               
@@ -125,8 +115,6 @@
           
             
             
-              
-            
             <li class="nav-item ">
               
               
@@ -136,16 +124,6 @@
               
             </li>
           
-          
-            
-              <li class="nav-item ">
-                <a href="/friends" target="_self">
-                  
-                    fa-ship友情链接
-                  
-                </a>
-              </li>
-            
           
         </ul>
       </nav>
@@ -177,7 +155,7 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  gemini">
+      <div class="section-layout  pisces">
         <div class="section-layout-wrapper">
           <div id="sidebarMeta" class="sidebar">
     
@@ -219,13 +197,48 @@
     
   
   
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="https://www.luogu.com.cn/user/73226">
+              <i class="fa fa-luogu" title="洛谷"></i>
+            </a>
+          
+        
+        
+          
+            <a class="social-img" href="#">
+              <img src="" />
+              <i class="fa fa-globe" title="" ></i>
+            </a>
+          
+        
+      </div>
+    </div>
+  
+
+  
+    <div class="sidebar-item right-motion sidebar-item-friends">
+      
+        <p class="friends-title">fa-ship友情链接</p>
+      
+      <div class="friends-box">
+        
+          <p>
+            <a href=""></a>
+          </p>
+        
+      </div>
+    </div>
+  
 
 
 </div>
 </div>
 <script>
   let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
+  let scheme = 'pisces';
   let sidebarWrapper = document.querySelector('.sidebar-wrapper');
   if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
     document.addEventListener('scroll', function(e) {
@@ -342,7 +355,7 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
   </footer>
   
   
-  <div class="gemini back-to-top" id="back_to_top">
+  <div class="pisces back-to-top" id="back_to_top">
     <i class="fa fa-arrow-up"></i>
     
     <span class="scrollpercent">
@@ -352,6 +365,41 @@ Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea<
   </div>
   
   
+  
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <div class="aplayer" id="aplayer"></div>
+  <input hidden id="player_cover" value="" />
+  <div class="music-list">
+  
+  </div>
+  <script>
+  let musics = document.querySelector('.music-list').children;
+  let mediaMusic = [];
+  let cover = document.querySelector('#player_cover').value;
+  for (let i = 0; i < musics.length; i++) {
+    let item = musics[i];
+    let splits = item.value.split(',');
+    mediaMusic.push({
+      name: splits[0],
+      artist: splits[1],
+      url: splits[2],
+      lrc: splits[3],
+      cover: cover
+    });
+  }
+  const ap = new APlayer({
+      container: document.getElementById('aplayer'),
+      fixed: true,
+      lrcType: 3,
+      listFolded: false,
+      listMaxHeight: 90,
+      audio: mediaMusic
+  });
+  </script>
+
+
   
 </div>
 <script>
