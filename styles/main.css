@@ -2246,15 +2246,15 @@ body {
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
-      cursor: url('/media/curs/Arrow.ani.cur'), default;
+      cursor: url('https://cdn.jsdelivr.net/gh/githubChen-ClearSkies/Chen-ClearSkies.github.io@master/media/curs/Arrow.ani.cur'), default;
     }a {
-      cursor: url('/media/curs/Hand.ani.cur'), pointer !important;
+      cursor: url('https://cdn.jsdelivr.net/gh/githubChen-ClearSkies/Chen-ClearSkies.github.io@master/media/curs/Hand.ani.cur'), pointer !important;
     }input, textarea, code {
-      cursor: url('/media/curs/IBeam.ani.cur'), text !important;
+      cursor: url('https://cdn.jsdelivr.net/gh/githubChen-ClearSkies/Chen-ClearSkies.github.io@master/media/curs/IBeam.ani.cur'), text !important;
     }code > span.copy-code {
-      cursor: url('/media/curs/AppStarting.ani.cur'), text !important;
+      cursor: url('https://cdn.jsdelivr.net/gh/githubChen-ClearSkies/Chen-ClearSkies.github.io@master/media/curs/AppStarting.ani.cur'), text !important;
     }.post img {
-      cursor: url('/media/curs/SizeAll.ani.cur'), zoom-in !important;
+      cursor: url('https://cdn.jsdelivr.net/gh/githubChen-ClearSkies/Chen-ClearSkies.github.io@master/media/curs/SizeAll.ani.cur'), zoom-in !important;
     }.post img {
-      cursor: url('/media/curs/NO.ani.cur'), zoom-out !important;
+      cursor: url('https://cdn.jsdelivr.net/gh/githubChen-ClearSkies/Chen-ClearSkies.github.io@master/media/curs/NO.ani.cur'), zoom-out !important;
     }
