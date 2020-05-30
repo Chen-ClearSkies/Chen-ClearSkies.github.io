@@ -9,7 +9,7 @@
 <meta name="description" content="代码改变世界，编程创造未来！">
 <meta name="theme-color" content="#000">
 <title>【洛谷P1003 铺地毯】蒟蒻题解 | 晴空刹那&#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1590847041415">
+<link rel="shortcut icon" href="/favicon.ico?v=1590847491201">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -203,8 +203,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -268,206 +267,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number compress"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%9C%AC%E8%92%9F%E8%92%BB%E7%9A%84%E9%A2%98%E8%A7%A3%E8%AE%A9%E5%A4%A7%E7%A5%9E%E4%BB%AC%E8%A7%81%E7%AC%91%E4%BA%86">本蒟蒻的题解，让大神们见笑了！</a>
-<ul>
-<li><a href="#%E4%BB%8E%E4%B8%8A%E5%9B%BE%E5%A4%A7%E5%AE%B6%E5%8F%AF%E4%BB%A5%E5%8F%91%E7%8E%B0%E4%B8%80%E7%82%B9%E5%90%8E%E9%93%BA%E7%9A%84%E5%9C%B0%E6%AF%AF%E8%A6%81%E6%AF%94%E5%85%88%E9%93%BA%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%A6%81%E6%9B%B4%E9%9D%A0%E4%B8%8A%E8%BF%99%E7%82%B9%E5%BE%88%E9%87%8D%E8%A6%81">从上图，大家可以发现一点：后铺的地毯要比先铺的位置要更靠上，这点很重要。</a></li>
-<li><a href="#ok%E5%BC%80%E5%A7%8B%E8%BF%9B%E5%85%A5%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">OK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>，开始进入代码讲解。</a></li>
-<li><a href="#%E8%BE%93%E5%85%A5%E9%83%A8%E5%88%86%E6%B2%A1%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E8%AE%B2%E7%9A%84%E5%92%8B%E4%BB%AC%E5%B0%B1%E8%B7%B3%E8%BF%87%E4%BA%86">输入部分没什么可以讲的，咋们就跳过了。</a></li>
-<li><a href="#%E6%95%B2%E9%BB%91%E6%9D%BF%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%98%AF%E9%87%8D%E7%82%B9%E6%B3%A8%E6%84%8F%E7%9C%8B%E5%93%A6">（敲黑板）接下来是重点，注意看哦。</a></li>
-<li><a href="#%E6%9C%89%E7%9A%84%E7%9C%BC%E5%B0%96%E7%9A%84%E6%9C%8B%E5%8F%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%8F%91%E7%8E%B0%E6%88%91%E6%98%AF%E5%80%92%E7%9D%80%E5%BE%AA%E7%8E%AF%E7%9A%84%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B6%89%E5%8F%8A%E5%88%B0%E8%B4%AA%E5%BF%83%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7%E5%89%8D%E9%9D%A2%E6%88%91%E4%BB%AC%E4%B9%9F%E8%AE%B2%E5%88%B0%E4%BA%86%E5%90%8E%E9%93%BA%E7%9A%84%E5%9C%B0%E6%AF%AF%E8%A6%81%E6%AF%94%E5%85%88%E9%93%BA%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%A6%81%E6%9B%B4%E9%9D%A0%E4%B8%8A%E9%82%A3%E4%B9%88%E4%BB%8E%E6%9C%80%E5%90%8E%E9%93%BA%E7%9A%84%E5%9C%B0%E6%AF%AF%E5%BC%80%E5%A7%8B%E6%9F%A5%E6%89%BE%E4%BC%9A%E6%9B%B4%E7%9C%81%E6%97%B6%E9%97%B4">有的眼尖的朋友可能会发现：我是倒着循环的，这是一个涉及到贪心的一个小技巧，前面我们也讲到了，后铺的地毯要比先铺的位置要更靠上，那么，从最后铺的地毯开始查找，会更省时间。</a></li>
-<li><a href="#%E7%84%B6%E5%90%8E%E5%91%A2%E5%85%B6%E5%AE%9E%E5%B0%B1%E6%98%AF%E6%9F%A5%E6%89%BExy%E8%BF%99%E4%B8%AA%E7%82%B9%E6%98%AF%E4%B8%8D%E6%98%AF%E5%9C%A8%E8%BF%99%E5%BC%A0%E5%9C%B0%E6%AF%AF%E7%9A%84%E8%8C%83%E5%9B%B4%E5%86%85%E5%A6%82%E6%9E%9C%E6%98%AF%E5%88%99%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BA%E8%BF%99%E5%BC%A0%E5%9C%B0%E6%AF%AF%E7%9A%84%E7%BC%96%E5%8F%B7%E7%84%B6%E5%90%8Ereturn%E5%B0%B1%E8%A1%8C%E4%BA%86">然后呢，其实就是查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，如果是，则直接输出这张地毯的编号，然后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">return</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">n</span></span></span></span>就行了。</a></li>
-<li><a href="#%E5%A6%82%E6%9E%9Cxy%E8%BF%99%E4%B8%AA%E7%82%B9%E4%B8%8A%E5%B9%B6%E6%B2%A1%E6%9C%89%E5%9C%B0%E6%AF%AF%E9%82%A3%E4%B9%88%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%87%BA-1%E8%A1%A8%E7%A4%BA%E8%BF%99%E4%B8%AAxy%E7%82%B9%E4%B8%8A%E6%B2%A1%E6%9C%89%E9%93%BA%E8%BF%87%E5%9C%B0%E6%AF%AF">如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点上并没有地毯，那么直接输出“<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>”，表示：这个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>点上没有铺过地毯。</a></li>
-</ul>
-</li>
-<li><a href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B">完整代码如下：</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -585,9 +384,9 @@
 <!-- more -->
 <p>原题：<a href="https://www.luogu.com.cn/problem/P1003">传送门</a></p>
 <hr>
-<h2 id="本蒟蒻的题解让大神们见笑了">本蒟蒻的题解，让大神们见笑了！</h2>
-<h3 id="从上图大家可以发现一点后铺的地毯要比先铺的位置要更靠上这点很重要">从上图，大家可以发现一点：后铺的地毯要比先铺的位置要更靠上，这点很重要。</h3>
-<h3 id="ok开始进入代码讲解"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">OK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>，开始进入代码讲解。</h3>
+<p>本蒟蒻的题解，让大神们见笑了！<br>
+从上图，大家可以发现一点：后铺的地毯要比先铺的位置要更靠上，这点很重要。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mi>K</mi></mrow><annotation encoding="application/x-tex">OK</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>，开始进入代码讲解。</p>
 <pre><code class="language-cpp">#include&lt;iostream&gt;
 using namespace std;
 int a[10001],b[10001],g[10001],k[10001],n,i,j,d,x,y;
@@ -598,7 +397,7 @@ int main()
 		cin&gt;&gt;a[d]&gt;&gt;b[d]&gt;&gt;g[d]&gt;&gt;k[d];
 	cin&gt;&gt;x&gt;&gt;y;
 </code></pre>
-<h3 id="输入部分没什么可以讲的咋们就跳过了">输入部分没什么可以讲的，咋们就跳过了。</h3>
+<p>输入部分没什么可以讲的，咋们就跳过了。</p>
 <pre><code class="language-cpp">for(d=n;d&gt;=1;d--)
 		if(x&gt;=a[d]&amp;&amp;x&lt;=g[d]+a[d]&amp;&amp;y&gt;=b[d]&amp;&amp;y&lt;=k[d]+b[d])
 		{
@@ -606,15 +405,15 @@ int main()
 			return 0;
 		}
 </code></pre>
-<h3 id="敲黑板接下来是重点注意看哦">（敲黑板）接下来是重点，注意看哦。</h3>
-<h3 id="有的眼尖的朋友可能会发现我是倒着循环的这是一个涉及到贪心的一个小技巧前面我们也讲到了后铺的地毯要比先铺的位置要更靠上那么从最后铺的地毯开始查找会更省时间">有的眼尖的朋友可能会发现：我是倒着循环的，这是一个涉及到贪心的一个小技巧，前面我们也讲到了，后铺的地毯要比先铺的位置要更靠上，那么，从最后铺的地毯开始查找，会更省时间。</h3>
-<h3 id="然后呢其实就是查找xy这个点是不是在这张地毯的范围内如果是则直接输出这张地毯的编号然后return就行了">然后呢，其实就是查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，如果是，则直接输出这张地毯的编号，然后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">return</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">n</span></span></span></span>就行了。</h3>
+<p>（敲黑板）接下来是重点，注意看哦。<br>
+有的眼尖的朋友可能会发现：我是倒着循环的，这是一个涉及到贪心的一个小技巧，前面我们也讲到了，后铺的地毯要比先铺的位置要更靠上，那么，从最后铺的地毯开始查找，会更省时间。<br>
+然后呢，其实就是查找<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点是不是在这张地毯的范围内，如果是，则直接输出这张地毯的编号，然后<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>t</mi><mi>u</mi><mi>r</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">return</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">n</span></span></span></span>就行了。</p>
 <pre><code class="language-cpp">cout&lt;&lt;&quot;-1&quot;;
 	return 0;
 }
 </code></pre>
-<h3 id="如果xy这个点上并没有地毯那么直接输出-1表示这个xy点上没有铺过地毯">如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点上并没有地毯，那么直接输出“<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>”，表示：这个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>点上没有铺过地毯。</h3>
-<h2 id="完整代码如下">完整代码如下：</h2>
+<p>如果<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>这个点上并没有地毯，那么直接输出“<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>”，表示：这个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span></span></span></span>点上没有铺过地毯。<br>
+完整代码如下：</p>
 <pre><code class="language-cpp">#include&lt;iostream&gt;
 using namespace std;
 int a[10001],b[10001],g[10001],k[10001],n,i,j,d,x,y;
@@ -1325,16 +1124,16 @@ E合金 eludium&lt;br&gt;
 &lt;p&gt;原题：&lt;a href=&#34;https://www.luogu.com.cn/problem/P1014&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
 &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://chen-clearskies.github.io//post-images/1586227332156.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;本蒟蒻的题解让大神们见笑了&#34;&gt;本蒟蒻的题解，让大神们见笑了！&lt;/h2&gt;
-&lt;h2 id=&#34;首先进行找规律&#34;&gt;首先，进行找规律。&lt;/h2&gt;
-&lt;h3 id=&#34;大家可以发现&#34;&gt;大家可以发现：&lt;/h3&gt;
+&lt;p&gt;本蒟蒻的题解，让大神们见笑了！&lt;br&gt;
+首先，进行找规律。&lt;br&gt;
+大家可以发现：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;1、当分子是一的时候，且分子和分母的和是偶数时，分母会加一。&lt;/li&gt;
 &lt;li&gt;2、当分母是一的时候，且分子和分母的和是奇数时，分子会加一。&lt;/li&gt;
 &lt;li&gt;3、除了以上情况外，分子和分母的和是偶数时，则分母减一，分子加一；分子和分母的和是奇数时，分母加一，分子减一。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ok规律找完了接下来就是代码上的实现了&#34;&gt;OK，规律找完了，接下来就是代码上的实现了。&lt;/h2&gt;
-&lt;h3 id=&#34;咳咳上代码&#34;&gt;咳咳，上代码：&lt;/h3&gt;
+&lt;p&gt;OK，规律找完了，接下来就是代码上的实现了。&lt;br&gt;
+咳咳，上代码：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
 using namespace std;
 int n,p=1,q=1;
@@ -1365,9 +1164,9 @@ int main()
 &lt;!-- more --&gt;
 &lt;p&gt;原题：&lt;a href=&#34;https://www.luogu.com.cn/problem/P1003&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;本蒟蒻的题解让大神们见笑了&#34;&gt;本蒟蒻的题解，让大神们见笑了！&lt;/h2&gt;
-&lt;h3 id=&#34;从上图大家可以发现一点后铺的地毯要比先铺的位置要更靠上这点很重要&#34;&gt;从上图，大家可以发现一点：后铺的地毯要比先铺的位置要更靠上，这点很重要。&lt;/h3&gt;
-&lt;h3 id=&#34;ok开始进入代码讲解&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;OK&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，开始进入代码讲解。&lt;/h3&gt;
+&lt;p&gt;本蒟蒻的题解，让大神们见笑了！&lt;br&gt;
+从上图，大家可以发现一点：后铺的地毯要比先铺的位置要更靠上，这点很重要。&lt;br&gt;
+&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;OK&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，开始进入代码讲解。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
 using namespace std;
 int a[10001],b[10001],g[10001],k[10001],n,i,j,d,x,y;
@@ -1378,7 +1177,7 @@ int main()
 		cin&amp;gt;&amp;gt;a[d]&amp;gt;&amp;gt;b[d]&amp;gt;&amp;gt;g[d]&amp;gt;&amp;gt;k[d];
 	cin&amp;gt;&amp;gt;x&amp;gt;&amp;gt;y;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输入部分没什么可以讲的咋们就跳过了&#34;&gt;输入部分没什么可以讲的，咋们就跳过了。&lt;/h3&gt;
+&lt;p&gt;输入部分没什么可以讲的，咋们就跳过了。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;for(d=n;d&amp;gt;=1;d--)
 		if(x&amp;gt;=a[d]&amp;amp;&amp;amp;x&amp;lt;=g[d]+a[d]&amp;amp;&amp;amp;y&amp;gt;=b[d]&amp;amp;&amp;amp;y&amp;lt;=k[d]+b[d])
 		{
@@ -1386,15 +1185,15 @@ int main()
 			return 0;
 		}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;敲黑板接下来是重点注意看哦&#34;&gt;（敲黑板）接下来是重点，注意看哦。&lt;/h3&gt;
-&lt;h3 id=&#34;有的眼尖的朋友可能会发现我是倒着循环的这是一个涉及到贪心的一个小技巧前面我们也讲到了后铺的地毯要比先铺的位置要更靠上那么从最后铺的地毯开始查找会更省时间&#34;&gt;有的眼尖的朋友可能会发现：我是倒着循环的，这是一个涉及到贪心的一个小技巧，前面我们也讲到了，后铺的地毯要比先铺的位置要更靠上，那么，从最后铺的地毯开始查找，会更省时间。&lt;/h3&gt;
-&lt;h3 id=&#34;然后呢其实就是查找xy这个点是不是在这张地毯的范围内如果是则直接输出这张地毯的编号然后return就行了&#34;&gt;然后呢，其实就是查找&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x,y)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;这个点是不是在这张地毯的范围内，如果是，则直接输出这张地毯的编号，然后&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;return&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;就行了。&lt;/h3&gt;
+&lt;p&gt;（敲黑板）接下来是重点，注意看哦。&lt;br&gt;
+有的眼尖的朋友可能会发现：我是倒着循环的，这是一个涉及到贪心的一个小技巧，前面我们也讲到了，后铺的地毯要比先铺的位置要更靠上，那么，从最后铺的地毯开始查找，会更省时间。&lt;br&gt;
+然后呢，其实就是查找&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x,y)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;这个点是不是在这张地毯的范围内，如果是，则直接输出这张地毯的编号，然后&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;return&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;就行了。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;cout&amp;lt;&amp;lt;&amp;quot;-1&amp;quot;;
 	return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;如果xy这个点上并没有地毯那么直接输出-1表示这个xy点上没有铺过地毯&#34;&gt;如果&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x,y)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;这个点上并没有地毯，那么直接输出“&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;-1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;”，表示：这个&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x,y)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;点上没有铺过地毯。&lt;/h3&gt;
-&lt;h2 id=&#34;完整代码如下&#34;&gt;完整代码如下：&lt;/h2&gt;
+&lt;p&gt;如果&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x,y)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;这个点上并没有地毯，那么直接输出“&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;-1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;”，表示：这个&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x,y)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;点上没有铺过地毯。&lt;br&gt;
+完整代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;iostream&amp;gt;
 using namespace std;
 int a[10001],b[10001],g[10001],k[10001],n,i,j,d,x,y;
@@ -1461,11 +1260,11 @@ int main()
         <a class="result-title" style="opacity: 0;" href="https://chen-clearskies.github.io/post/luogu-p1888/"" data-c="
           &lt;p&gt;用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分即可。&lt;/p&gt;
 &lt;!-- more --&gt; 
-&lt;p&gt;原题：&lt;a href=&#34;https://www.luogu.com.cn/problem/P1888&#34;&gt;传送门&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;本蒟蒻的题解让大神们见笑了&#34;&gt;本蒟蒻的题解，让大神们见笑了！&lt;/h2&gt;
-&lt;h3 id=&#34;首先正弦值是个毛线咋们不需要知道其实我也不咋地了解我们要知道的是其实题目就是让我们使输入中最小的数除以最大的数以分数形式呈现然后约成最简分数-除此之外一律不管&#34;&gt;首先，正弦值是个毛线咋们不需要知道（&lt;s&gt;其实我也不咋地了解&lt;/s&gt;），我们要知道的是：其实题目就是让我们使输入中最小的数除以最大的数以分数形式呈现，然后约成最简分数。除此之外，一律不管。&lt;/h3&gt;
-&lt;h3 id=&#34;这么说起来就容易多了&#34;&gt;这么说起来就容易多了。&lt;/h3&gt;
-&lt;h3 id=&#34;咳咳进入代码讲解环节&#34;&gt;咳咳，进入代码讲解环节：&lt;/h3&gt;
+&lt;p&gt;原题：&lt;a href=&#34;https://www.luogu.com.cn/problem/P1888&#34;&gt;传送门&lt;/a&gt;&lt;br&gt;
+本蒟蒻的题解，让大神们见笑了！&lt;br&gt;
+首先，正弦值是个毛线咋们不需要知道（&lt;s&gt;其实我也不咋地了解&lt;/s&gt;），我们要知道的是：其实题目就是让我们使输入中最小的数除以最大的数以分数形式呈现，然后约成最简分数。除此之外，一律不管。&lt;br&gt;
+这么说起来就容易多了。&lt;br&gt;
+咳咳，进入代码讲解环节：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt; //万能库万岁！！！
 using namespace std;
 int a,b,c,minn,maxx;
@@ -1473,13 +1272,13 @@ int main()
 {
 	cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;输入部分没什么可以讲的咋们就跳过了&#34;&gt;输入部分没什么可以讲的，咋们就跳过了。&lt;/h3&gt;
+&lt;p&gt;输入部分没什么可以讲的，咋们就跳过了。&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;	minn=min(a,min(b,c)),maxx=max(a,max(b,c));
 	cout&amp;lt;&amp;lt;minn/__gcd(minn,maxx)&amp;lt;&amp;lt;&amp;quot;/&amp;quot;&amp;lt;&amp;lt;maxx/__gcd(minn,maxx);
 	return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;这一段引用了三个函数min-max-gcd如果不讲一讲它们的作用导致整个题解变得不清不楚那我就太没良心了哈&#34;&gt;这一段引用了三个函数：min()、max()、gcd()，如果不讲一讲它们的作用，导致整个题解变得不清不楚那我就太没良心了哈。&lt;/h3&gt;
+&lt;p&gt;这一段引用了三个函数：min()、max()、gcd()，如果不讲一讲它们的作用，导致整个题解变得不清不楚那我就太没良心了哈。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;min()&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;：输入两个参数，返回小的那一个数。&lt;/li&gt;
@@ -1495,9 +1294,9 @@ int main()
 &lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mo&gt;(&lt;/mo&gt;&lt;mo&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;gcd()&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathdefault&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;：输入两个参数，返回这两个参数的最大公因数。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;以上是我对以上函数的浅薄认识一些比较复杂的用法我不太懂请各位多多指教&#34;&gt;以上是我对以上函数的浅薄认识，一些比较复杂的用法我不太懂，请各位多多指教。&lt;/h3&gt;
-&lt;h3 id=&#34;言归正传上面这一行代码我用两个变量分别存储了输入的三个数中最大的那个和最小的那个然后算出它俩的最大公因数进行约分最后输出就行了&#34;&gt;言归正传，上面这一行代码，我用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分，最后输出就行了。&lt;/h3&gt;
-&lt;h2 id=&#34;完整代码如下&#34;&gt;完整代码如下：&lt;/h2&gt;
+&lt;p&gt;以上是我对以上函数的浅薄认识，一些比较复杂的用法我不太懂，请各位多多指教。&lt;br&gt;
+言归正传，上面这一行代码，我用两个变量分别存储了输入的三个数中最大的那个和最小的那个，然后算出它俩的最大公因数进行约分，最后输出就行了。&lt;br&gt;
+完整代码如下：&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include&amp;lt;bits/stdc++.h&amp;gt; //万能库万岁！！！
 using namespace std;
 int a,b,c,minn,maxx;
