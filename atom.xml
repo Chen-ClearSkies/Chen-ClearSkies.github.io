@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
     <title>晴空刹那&apos;s Blog</title>
-    <updated>2020-05-31T01:20:22.847Z</updated>
+    <updated>2020-05-31T01:29:58.753Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
     <link rel="self" href="https://chen-clearskies.github.io/atom.xml"/>
@@ -16,6 +16,10 @@
         <link href="https://chen-clearskies.github.io/post/software/">
         </link>
         <updated>2020-05-30T14:08:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>博主在此为网友们安利一些优秀的软件。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>博主在此为网友们安利一些优秀的软件。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[【洛谷P1014 Cantor表】蒟蒻题解]]></title>
