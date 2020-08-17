@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chen-clearskies.github.io/</id>
-    <title>晴空刹那&apos;s Blog</title>
-    <updated>2020-08-12T13:50:46.175Z</updated>
+    <title>Clear-Skies&apos;s Blog</title>
+    <updated>2020-08-17T02:34:38.840Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chen-clearskies.github.io/"/>
     <link rel="self" href="https://chen-clearskies.github.io/atom.xml"/>
     <subtitle>代码改变世界，编程创造未来！</subtitle>
     <logo>https://chen-clearskies.github.io/images/avatar.png</logo>
     <icon>https://chen-clearskies.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 晴空刹那&apos;s Blog</rights>
+    <rights>All rights reserved 2020, Clear-Skies&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[【置顶】装机必备软件安利]]></title>
         <id>https://chen-clearskies.github.io/post/software/</id>
